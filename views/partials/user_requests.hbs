@@ -33,7 +33,7 @@
       <tr class="leave-request-row">
         <td>{{ this.leave_type.name }}{{#if this.is_pended_revoke_leave}}<br>(pended revoke){{/if}}</td>
         <td>{{ this.get_deducted_days_number }}</td>
-        <td>From {{#with this.get_start_leave_day}}{{as_date this.date}}{{/with}} to {{#with this.get_end_leave_day}}{{as_date this.date}}{{/with}}</td>
+        <td>{{#with this.get_start_leave_day}}{{as_date this.date}}{{/with}} ~ {{#with this.get_end_leave_day}}{{as_date this.date}}{{/with}}</td>
         <td class="user-request-table-approver">{{#with this.approver}}{{this.full_name}}{{/with}}</td>
         <td>
           {{# if this.is_approved_leave }}
