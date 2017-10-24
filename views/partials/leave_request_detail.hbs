@@ -8,5 +8,5 @@
     {{~ as_date this.date ~}}
     {{~# if this.is_morning_leave}} (morning){{/if~}}
     {{~# if this.is_afternoon_leave}} (afternoon){{/if~}}
-  {{~/with~}}
+  {{~/with}} ({{ this.employee_comment }})
 {{~/with~}}

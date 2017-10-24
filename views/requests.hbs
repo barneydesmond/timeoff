@@ -26,6 +26,7 @@
           <th>Date of request</th>
           <th>Leave dates</th>
           <th>Type</th>
+          <th>Reason</th>
           <th>Days</th>
           <th colspan="2"></th>
         </tr>
@@ -38,6 +39,7 @@
           <td>{{as_date this.createdAt}}</td>
           <td>{{#with this.get_start_leave_day}}{{as_date this.date}}{{/with}} ~ {{#with this.get_end_leave_day}}{{as_date this.date}}{{/with}}</td>
           <td>{{#if this.is_pended_revoke_leave}}REVOKE {{/if}}{{this.leave_type.name}}</td>
+          <td><span title="{{ this.employee_comment }}">{{ trimString this.employee_comment 16 }}</span></td>
           <td data-vpp="days_used">{{ this.get_deducted_days_number }}</td>
           <td>
             <form action="/requests/reject/" method="POST">

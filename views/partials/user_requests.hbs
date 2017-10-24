@@ -19,7 +19,7 @@
       <thead>
         <tr>
           <th>Type</th>
-          <th>Deducted</th>
+          <th>Reason</th>
           <th>Dates</th>
           <th>Approved by</th>
           <th></th>
@@ -32,7 +32,7 @@
 
       <tr class="leave-request-row">
         <td>{{ this.leave_type.name }}{{#if this.is_pended_revoke_leave}}<br>(pended revoke){{/if}}</td>
-        <td>{{ this.get_deducted_days_number }}</td>
+        <td><span title="{{ this.employee_comment }}">{{ trimString this.employee_comment 32 }}</span></td>
         <td>{{#with this.get_start_leave_day}}{{as_date this.date}}{{/with}} ~ {{#with this.get_end_leave_day}}{{as_date this.date}}{{/with}}</td>
         <td class="user-request-table-approver">{{#with this.approver}}{{this.full_name}}{{/with}}</td>
         <td>
